@@ -1,0 +1,3 @@
+[submodule "testgame/scripts/AI"]
+	path = testgame/scripts/AI
+	url = git@gitlab.com:_marp/marpai.git
