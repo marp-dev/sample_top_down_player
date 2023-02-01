@@ -14,7 +14,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Sample topdown playerTest"
+config/name="Sample topdown player"
 run/main_scene="res://scenes/game.tscn"
 config/icon="res://icon.png"
 
