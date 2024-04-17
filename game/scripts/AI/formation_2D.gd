@@ -2,18 +2,18 @@ extends 'state_machine_2D.gd'
 
 var current_rotation
 var in_range
-onready var range_limit = PI/9
-onready var inrange_step = PI/90
-onready var offrange_step = PI/45
+@onready var range_limit = PI/9
+@onready var inrange_step = PI/90
+@onready var offrange_step = PI/45
 var step
 
-export(Array, NodePath) var positions
+#@export var positions # (Array, NodePath)
 
 var members = []
 
 
 func _ready():
-	._ready()
+	super._ready()
 	current_rotation = global_rotation
 	$positions.global_rotation = current_rotation
 	in_range = true
@@ -30,7 +30,7 @@ func _input(event):
 		for member in members:
 			if not member.get_node('AimRay').is_colliding() or not member.get_node('AimRay').get_collider().is_in_group('character'):
 				member.fire()
-	._input(event)
+	super._input(event)
 
 
 func _process(delta):
@@ -42,7 +42,7 @@ func _process(delta):
 		step = offrange_step
 
 	rotate_formation()
-	._process(delta)
+	super._process(delta)
 
 
 func check_range():
@@ -93,12 +93,13 @@ func get_weapon(weapon):
 
 
 func setup_formation():
-	for i in range(0,positions.size()):
-		var current_position = $positions.get_child(i)
-		var position_path = current_position.get_path()
-		var member = get_node(positions[i])
-		if(member.has_method('follow') and position_path):
-			member.follow( position_path )
-			members.append(member)
-			current_position.add_child(member)
+	#for i in range(0,positions.size()):
+	#	var current_position = $positions.get_child(i)
+	#	var position_path = current_position.get_path()
+	#	var member = get_node(positions[i])
+	#	if(member.has_method('follow') and position_path):
+	#		member.follow( position_path )
+	#		members.append(member)
+	#		current_position.add_child(member)
+	pass
 

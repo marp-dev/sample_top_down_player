@@ -1,15 +1,15 @@
 extends 'state_machine_2D.gd'
 
-onready var current_weapon = null
+@onready var current_weapon = null
 var SPEED = 100
-export(NodePath) var follow_to
+@export var follow_to: NodePath
 
 var goto_call_obj
 var goto_call_method
 
 
 func _ready():
-	._ready()
+	super._ready()
 	add_to_group("character")
 
 	if follow_to:
@@ -18,7 +18,7 @@ func _ready():
 
 func _process(delta):
 	look_at(get_global_mouse_position())
-	._process(delta)
+	super._process(delta)
 
 
 func add_weapon(weapon):
@@ -58,7 +58,7 @@ func on_finished(state_name):
 	if state_name == STATE_GOTO:
 		if goto_call_obj and goto_call_obj.has_method(goto_call_method):
 			goto_call_obj.call(goto_call_method)
-	.on_finished(state_name)
+	super.on_finished(state_name)
 
 
 func fire():
