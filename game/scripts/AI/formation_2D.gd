@@ -23,9 +23,9 @@ func _ready():
 
 func _input(event):
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
-		state('STATE_MOVEMENT')
+		enter('STATE_MOVEMENT')
 	else:
-		state('STATE_IDLE')
+		enter('STATE_IDLE')
 	if Input.is_action_just_pressed("ui_fire"):
 		for member in members:
 			if not member.get_node('AimRay').is_colliding() or not member.get_node('AimRay').get_collider().is_in_group('character'):
