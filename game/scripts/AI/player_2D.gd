@@ -1,4 +1,4 @@
-extends 'state_machine_2D.gd'
+extends 'fifo_state_machine_2D.gd'
 
 var current_weapon
 
