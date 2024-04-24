@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0rcv2cnuxea3"]
+[gd_scene load_steps=6 format=3 uid="uid://b0rcv2cnuxea3"]
 
 [ext_resource type="PackedScene" uid="uid://bhmeninmvc4" path="res://scenes/player.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://ckkfj7tuq5qy6" path="res://scenes/WeaponIcon.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://cfqw0ykp27it" path="res://assets/graph-paper.svg" id="3_dkmse"]
+
+[sub_resource type="Gradient" id="1"]
+colors = PackedColorArray(0, 0, 0.277344, 1, 0.00112915, 0.00112915, 0.289062, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_507ot"]
+gradient = SubResource("1")
+width = 800
+height = 600
+repeat = 1
 
 [node name="Game2" type="Node2D"]
 
@@ -11,3 +21,28 @@
 
 [node name="WeaponIcon" parent="." instance=ExtResource("2")]
 position = Vector2(444.556, 210.497)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-1000, -1000)
+motion_mirroring = Vector2(2000, 2000)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = SubResource("GradientTexture2D_507ot")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+show_behind_parent = true
+position = Vector2(-1000, -1000)
+motion_mirroring = Vector2(2000, 2000)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(1, 1, 1, 0.27451)
+texture_repeat = 3
+texture = ExtResource("3_dkmse")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
