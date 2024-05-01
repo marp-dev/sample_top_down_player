@@ -1,6 +1,8 @@
 # Topdown player - Godot sample project
 
-It features a simple playable character and a state machine with basic states.
+/By Miguel Angel Rodriguez Perez [marp.rocks](marp.rocks)/
+
+it features a simple playable character and a state machine with basic states.
 
 **Built with Godot 4.2**
 
