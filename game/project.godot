@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Sample topdown player"
-run/main_scene="res://scenes/game.tscn"
+config/name="TopDownPlayerTest"
+run/main_scene="res://scenes/Game2.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.png"
 

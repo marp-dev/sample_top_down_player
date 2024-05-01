@@ -11,4 +11,3 @@ func _ready():
 	weapons = {}
 	weapons.weapon = preload('../scenes/weapon.tscn')
 
-	pointer = preload('../scenes/pointer.tscn')
