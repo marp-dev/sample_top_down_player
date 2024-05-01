@@ -1,6 +1,6 @@
 # Topdown player - Godot sample project
 
-/By Miguel Angel Rodriguez Perez [marp.rocks](marp.rocks)/
+*/ By Miguel Angel Rodriguez Perez [marp.rocks](https://marp.rocks) /*
 
 it features a simple playable character and a state machine with basic states.
 
